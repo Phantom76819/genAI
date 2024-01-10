@@ -1,0 +1,147 @@
+#chatCon {
+    min-width: 300px;
+    width: 10%;
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+  }
+  
+  #chatCon .chat-box {
+    /* display: none; */
+    width: 100%;
+    height: 500px;
+    border-radius: 25px;
+    background-color: #eee;
+  }
+  
+  #chatCon .chat-box .header {
+    background-color: #3f80da;
+    padding: 15px;
+    border-radius: 20px 20px 0 0;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #chatCon .chat-box .header button {
+    background-color: #f0f0f0;
+    color: #3f80da;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  #chatCon .chat-box .header button:hover {
+    background-color: #3f80da;
+    color: #fff;
+  }
+  
+  
+  #chatCon .chat-box .msg-area {
+    /* overflow: hidden; */
+    height: 370px;
+    padding: 15px;
+    overflow-y: auto;
+  }
+/* 自定义滚动条样式 */
+  .msg-area::-webkit-scrollbar {
+    width: 8px; /* 更细的滚动条 */
+  }
+
+  .msg-area::-webkit-scrollbar-track {
+    background: #f0f0f0; /* 柔和的轨道颜色 */
+    border-radius: 10px;
+  }
+
+  .msg-area::-webkit-scrollbar-thumb {
+    background: #c0c0c0; /* 柔和的滑块颜色 */
+    border-radius: 10px;
+  }
+
+  .msg-area::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+  }
+
+
+  .msg-area {
+    scroll-behavior: smooth;
+  }
+  #chatCon .chat-box .msg-area .left span {
+    display: inline-block;
+    font-size: 17.5px;
+    text-align: left;
+    border-radius: 20px; 
+    padding: 10px 15px; 
+    background-color: #ddd; 
+    color: #000; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
+    max-width: 70%; 
+    word-wrap: break-word;
+  }
+  
+  #chatCon .chat-box .msg-area .right {
+    text-align: right;
+  }
+  
+  #chatCon .chat-box .msg-area .right span {
+    display: inline-block;
+    text-align: left;
+    font-size: 17.5px;
+    border-radius: 20px; /* 更大的圆角 */
+    padding: 10px 15px; /* 调整内边距 */
+    background-color: #007aff; /* 发送方气泡颜色，类似iMessage的蓝色 */
+    color: #fff; /* 文本颜色 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    max-width: 70%; /* 控制气泡最大宽度 */
+    word-wrap: break-word; /* 防止文本溢出 */
+  }
+  
+  #chatCon .chat-box .footer {
+    padding: 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  #chatCon .chat-box .footer input {
+    border: 1px solid #fff;
+    padding: 10px;
+    width: 80%;
+    border-radius: 15px;
+  }
+  
+  #chatCon .chat-box .footer input:foucs {
+    outline: none;
+  }
+
+  #chatCon .chat-box .footer button {
+    border: none;
+    font-size: 22.5px;
+    color: rgb(158, 144, 238);
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+  #chatCon .pop {
+    width: 100%;
+    height: 25%;
+    cursor: pointer;
+  }
+  
+  #chatCon .pop p {
+    text-align: right;
+  }
+  
+  #chatCon .pop img {
+    border-radius: 50%;
+    width: 25%;
+  }
