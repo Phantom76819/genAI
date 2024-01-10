@@ -1,11 +1,12 @@
-import React from "react";
-import PopChat from "./PopChat.js";
-import "./App.css"
-
+import React from 'react';
+import PopChat from './PopChat';
+import './App.css';
 
 function App() {
   return (
-    <PopChat/>
+    <div className="app-container">
+      <PopChat />
+    </div>
   );
 }
 
