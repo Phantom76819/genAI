@@ -1,18 +1,37 @@
-import React, { useState } from 'react';
-import ChatMessage from './ChatMessage.js';
+import React, { useState, useEffect} from 'react';
+import ChatMessage from './ChatMessage';
+import { OpenAI } from 'openai';
+
 
 function PopChat() {
   const [userInput, setUserInput] = useState('');
   const [messages, setMessages] = useState([]);
 
-  const handleSubmit = (e) => {
+  const openai = new OpenAI({
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+  });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userInput.trim()) return;
-    const newMessage = { text: userInput, sender: 'human' };
-    setMessages([...messages, newMessage]);
+    addMessage(userInput, 'human');
     setUserInput('');
-    // Add logic here for sending message to OpenAI and receiving response
+
+    const response = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: userInput,
+      max_tokens: 150,
+    });
+
+    if (response.data) {
+      addMessage(response.data.choices[0].text, 'ai');
+    }
   };
+
+  const addMessage = (text, sender) => {
+    setMessages(messages => [...messages, { text, sender }]);
+  };
+
 
   return (
     <main>
@@ -21,7 +40,7 @@ function PopChat() {
           <img src="images/owl-logo.png" className="logo" alt="logo" />
           <h1>KnowItAll</h1>
           <h2>Ask me anything!</h2>
-          <p className="supportId">User ID: 2344</p>
+          <p className="supportId">User ID: 76819</p>
         </div>
         <div className="chatbot-conversation-container" id="chatbot-conversation">
           {messages.map((message, index) => (
