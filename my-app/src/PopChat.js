@@ -37,9 +37,7 @@ function PopChat() {
     <main>
       <section className="chatbot-container">
         <div className="chatbot-header">
-          <img src="images/owl-logo.png" className="logo" alt="logo" />
-          <h1>KnowItAll</h1>
-          <h2>Ask me anything!</h2>
+          <h2>Ask me!</h2>
           <p className="supportId">User ID: 76819</p>
         </div>
         <div className="chatbot-conversation-container" id="chatbot-conversation">
@@ -57,7 +55,7 @@ function PopChat() {
             onChange={(e) => setUserInput(e.target.value)}
           />
           <button id="submit-btn" className="submit-btn" type="submit">
-            <img src="images/send-btn-icon.png" className="send-btn-icon" alt="Send" />
+            Send
           </button>
         </form>
       </section>
